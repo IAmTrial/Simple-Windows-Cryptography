@@ -1,0 +1,67 @@
+/**
+ * Simple Windows Cryptography
+ * Copyright (C) 2022  Mir Drualga
+ *
+ * This file is part of Simple Windows Cryptography.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#ifndef SWINCRYPT_RESOURCE_RC_
+#define SWINCRYPT_RESOURCE_RC_
+
+#include <windows.h>
+
+/* VERSION INFORMATION */
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+VS_VERSION_INFO    VERSIONINFO
+  FILEVERSION      1,0,0,0
+  PRODUCTVERSION   1,0,0,0
+  FILEFLAGSMASK    VS_FFI_FILEFLAGSMASK
+#ifdef NDEBUG
+  FILEFLAGS        0x0L
+#else
+  FILEFLAGS        VS_FF_DEBUG | VS_FF_PRIVATEBUILD | VS_FF_PRERELEASE
+#endif
+  FILEOS           VOS_NT_WINDOWS32
+  FILETYPE         VFT_APP
+  FILESUBTYPE      VFT2_UNKNOWN /* not used */
+{
+  BLOCK "StringFileInfo"
+  {
+    BLOCK "040904E4" /* Lang=US English, CharSet=Windows Multilingual */
+    {
+      VALUE "Build",            "2022-03-11"
+      VALUE "Comments",         "Licensed under Affero GPL v3 and greater."
+      VALUE "CompanyName",      "SlashGaming"
+      VALUE "Developer",        "Mir Drualga"
+      VALUE "FileDescription",  "Performs simple cryptography functions for Windows."
+      VALUE "InternalName",     "Simple Window Cryptography"
+      VALUE "LegalCopyright",   "Copyright (C) 2022  Mir Drualga"
+      VALUE "LegalTrademarks",  "All rights reserved."
+      VALUE "PrivateBuild",     ""
+      VALUE "ProductName",      "Simple Window Cryptography"
+      VALUE "ProductVersion",   "1.0.0.0"
+      VALUE "SpecialBuild",     ""
+      VALUE "Support",          "github.com/IAmTrial/Simple-Windows-Cryptography"
+    } /* BLOCK "040904E4" */
+  } /* BLOCK "StringFileInfo" */
+  BLOCK "VarFileInfo"
+  {
+    VALUE "Translation", 0x409, 1252
+  } /* BLOCK "VarFileInfo" */
+}
+
+#endif /* SWINCRYPT_RESOURCE_RC_ */
