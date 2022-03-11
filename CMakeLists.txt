@@ -37,6 +37,10 @@ if (MINGW)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -municode")
 endif (MINGW)
 
+if (MSVC)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:CONSOLE /ENTRY:wmainCRTStartup")
+endif (MSVC)
+
 # List all of the source files here
 set(RESOURCE_FILES
     "resource/resource.rc"
