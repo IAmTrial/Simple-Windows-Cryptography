@@ -26,6 +26,9 @@ project(swincrypt)
 set(CMAKE_C_STANDARD 90)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
+# Unicode defintions
+add_definitions(-DUNICODE -D_UNICODE)
+
 # Remove MinGW compiled binary "lib" prefix
 if (MINGW)
     set(CMAKE_IMPORT_LIBRARY_PREFIX "")
