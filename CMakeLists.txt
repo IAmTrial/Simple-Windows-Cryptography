@@ -26,6 +26,9 @@ project(swincrypt)
 set(CMAKE_C_STANDARD 90)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
+# Unicode defintions
+add_definitions(-DUNICODE -D_UNICODE)
+
 # Remove MinGW compiled binary "lib" prefix
 if (MINGW)
     set(CMAKE_IMPORT_LIBRARY_PREFIX "")
@@ -33,6 +36,10 @@ if (MINGW)
     set(CMAKE_STATIC_LIBRARY_PREFIX "")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -municode")
 endif (MINGW)
+
+if (MSVC)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:CONSOLE /ENTRY:wmainCRTStartup")
+endif (MSVC)
 
 # List all of the source files here
 set(RESOURCE_FILES
